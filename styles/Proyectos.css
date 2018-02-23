@@ -1,0 +1,359 @@
+/***********************/
+/** AJUSTES GENERALES **/
+/***********************/
+
+* {
+    box-sizing: border-box;
+}
+
+/*Definimos la fuente del nav*/
+@font-face{
+	font-family: fontNav;
+	src: url(../fonts/code.otf);
+}
+
+/*Ajustes Generales*/
+html{
+	width: 100%;
+    height: 100%;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/*Ajustes Generales*/
+body{
+	background-image: url(../images/Proyectos/HomeBG.jpg);
+	background-color: black;		
+	background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+h3{
+    visibility: none;
+    font-size: 0px;
+}
+
+
+h2{
+    font-size: 90px;
+    color: white;
+    text-shadow: 2px 2px 2px #000000;
+    font-family: fontNav;
+
+}
+
+video{
+    width: 100%;
+}
+
+/*************************/
+/** BARRA DE NAVEGACION **/
+/*************************/
+
+/*CSS seccion del navegador*/
+nav{
+	position: fixed;
+	width: 100%;
+    height: 5%;
+    margin: 0%;
+
+    display: flex;
+    justify-content: center;
+
+    background: linear-gradient(rgba(0,0,0,1), rgba(0,0,0,1), rgba(0,0,0,1), rgba(0,0,0,0));
+
+	z-index: 15;
+}
+
+
+/*Ajustes links*/
+a{
+	text-decoration: none;
+	color: white;
+	opacity: .5;
+}
+
+    /*links on hover*/
+    a:hover{
+    	text-decoration: none;
+    	color: white;
+    	opacity: 1;
+    	font-size: 26px;
+    }
+
+/*link actual*/
+#locked{
+
+	color: #41e2bd;
+}
+    /*link on hover*/
+    #locked:hover{
+
+    	color: #41e2bd;
+    	opacity: .5;
+    	font-size: 25px;
+
+    }
+
+/*CSS del ul dentro de la barra de navegacion*/
+#Menu{
+    display:  flex;
+    flex-direction: fila;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 40%;
+
+    list-style-type: none;
+    font-size: 25px;
+    color: white;
+    font-family: fontNav;
+
+}
+
+/*************************/
+/** CSS IMAGEN CON ZOOM **/
+/*************************/
+
+/*Sección general*/
+#contenedorImagen{
+    z-index:1;
+    position:relative;
+    overflow: hidden;
+    
+    width: 100%;
+    height: 900px;
+
+    display: block;
+}
+
+/*Imagen de fondo*/
+#imagenFondo{
+
+    position:absolute;
+    left:0;
+    top:0;
+
+    overflow: hidden; 
+    -webkit-filter: blur(3px);
+    transition: all .5s ease-in-out;
+
+}
+    /*Imagen on hover*/
+    #imagenFondo:hover{
+        overflow: hidden;
+        -webkit-transform: scale(1.05);
+        -webkit-filter: blur(0px);
+
+    }
+
+/*Capa del logo*/
+#imagenTexto-Capa{
+    position:absolute;
+    left:0;
+    top:0;
+    z-index:2;
+
+    overflow: hidden;
+    width: 100%;
+
+    user-select: none;
+    pointer-events: none;
+}
+
+/*Texto Intro1*/
+#txt1{
+    text-align: left;
+    font-size: 114px;
+
+    color: white;
+    text-shadow: 0px 0px 10px #41e2bd;
+
+    margin-left: 200px;
+    margin-top: 50px;
+    margin-bottom: 130px;
+    font-family: AriaL;
+
+    visibility: hidden;
+}
+
+/*Texto Intro2*/
+.txt2{
+    text-align: center;
+    font-size: 150px;
+    color: white;
+    text-shadow: 0px 0px 20px #41e2bd;
+    margin: 0;
+    font-family: fontNav;
+}
+
+/***************/
+/** SEPARADOR **/
+/***************/
+
+.separador{
+	background-color: black;
+	width: 100%;
+	height: 50px;
+	-webkit-filter: blur(2px);
+}
+
+/*********************/
+/** SEPARADOR IMAGEN**/
+/*********************/
+#separadorImagen{
+    overflow: hidden;   
+
+    width: 100%;
+    height: 50px;
+}
+
+#imagenSeparador{
+	-webkit-filter: blur(3px);
+	position: relative;
+	top: -780px;
+}
+
+/******************/
+/** IMAGEN MODAL **/
+/******************/
+
+
+/* La division del Modal*/
+.modal {
+    display: none; /* Oculto, lo ponemos visible por codigo */
+    position: fixed;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%; 
+    overflow: auto; /* Dejamos activado el scroll, aunque no deberia ser necesario */
+    background-color: rgba(0,0,0,0.9); 
+    z-index: 100;  /* Le damos la máxima prioridad */
+}
+
+/* El boton para cerrar el modal */
+.cerrar {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    z-index: 100;
+}
+    /* El boton on hover/focus */
+    .cerrar:hover,
+    .cerrar:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+        z-index: 100;
+    }
+
+/* Imagen del Modal */
+.contenidoModal {
+    margin: auto;
+    display: block;
+    width: 70%;
+    z-index: 100;
+
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+/* Aquí declaramos que va a hacer la animacion del contenido del Modal (Zoom) */
+@keyframes zoom {
+    from {transform:scale(0)}
+    to {transform:scale(1)}
+}
+
+
+ /* Imagen CON Modal (Trigger) */
+.imagenConModal {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;    
+}
+    /* Imagen on hover */
+    .imagenConModal:hover {
+        -webkit-filter: brightness(150%);
+    }
+
+
+
+/*************/
+/** GALERIA **/
+/*************/
+
+
+/* Añadimos padding entre cada columna (if you want) */
+.fila,
+.fila > .column {
+    padding: 8px;
+} 
+.fila:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Hacemos que solo pueda haber 3 columnas */
+.column {
+    float: left;
+    width: 33.33%;
+    display: none; /* Las ocultamos por defecto!! Luego las mostramos por codigo */
+}
+
+
+/* Contenido de cada columna */
+.contenido {
+
+    /* Degradado radial para hacer "marcos" */
+    background: radial-gradient(rgba(0,0,0,0) 80%, rgba(0,0,0,1) 97%);
+
+    padding: 10px;
+}
+
+/* Clase para mostrar tras filtrar */
+.show {
+    display: block;
+}
+
+/* Estilo de los botones */
+.btn {
+  border: none;
+  outline: none;
+  margin-top: 20px;
+  padding: 12px 16px;
+  background-color: white;
+  cursor: pointer;
+  font-family: AriaL;
+  font-weight: bold;
+}
+    /* Boton on hover */
+    .btn:hover {
+      background-color: #a97bce;
+    }
+
+    /* Cambiamos valores por codigo para el boton activo */
+    .btn.active {
+      background-color: #643f82;
+       color: white;
+    }
+
+/* Capa de los botones */
+#btnDiv{
+	margin-left: 16px;
+}
+

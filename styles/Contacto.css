@@ -1,0 +1,388 @@
+/***********************/
+/** AJUSTES GENERALES **/
+/***********************/
+
+/*Definimos la fuente del nav*/
+@font-face{
+	font-family: fontNav;
+	src: url(../fonts/code.otf);
+}
+
+/*Ajustes Generales*/
+html{
+	width: 100%;
+    height: 100%;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/*Ajustes Generales*/
+body{
+
+	background-color: black;		
+	background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+/*Ajustes conjunto links, sigue en #Menu*/
+ul{
+	display: block;
+}
+
+p{
+	margin:0;
+}
+
+
+
+
+/*************************/
+/** BARRA DE NAVEGACION **/
+/*************************/
+
+/*CSS Nav (solo div)*/
+nav{
+	position: fixed;
+	width: 100%;
+    height: 5%;
+    margin: 0%;
+
+    display: flex;
+    justify-content: center;
+
+    background: linear-gradient(rgba(0,0,0,1), rgba(0,0,0,1), rgba(0,0,0,1), rgba(0,0,0,0));
+
+	z-index: 15;
+}
+
+/*Ajustes links*/
+a{
+	text-decoration: none;
+	color: white;
+	opacity: .5;
+}
+	/*links on hover*/
+	a:hover{
+		text-decoration: none;
+		color: white;
+		opacity: 1;
+		font-size: 26px;
+	}
+
+/*link actual*/
+#locked{
+
+	color: #e28473;
+}
+	/*link on hover*/
+	#locked:hover{
+
+		color: #e28473;
+		opacity: .5;
+		font-size: 25px;
+
+	}
+
+/*CSS del ul dentro de la barra de navegacion*/
+#Menu{
+display:  flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: center;
+
+width: 40%;
+
+list-style-type: none;
+font-size: 25px;
+color: white;
+font-family: fontNav;
+
+}
+
+/*************************/
+/** CSS IMAGEN CON ZOOM **/
+/*************************/
+
+/*Sección general*/
+#contenedorImagen{
+	z-index:1;
+	position:relative;
+	overflow: hidden;
+	
+	width: 100%;
+	height: 900px;
+
+	display: block;
+}
+
+/*Imagen de fondo*/
+#imagenFondo{
+
+	position:absolute;
+    left:0;
+    top:0;
+
+	overflow: hidden; 
+	-webkit-filter: blur(3px);
+	transition: all .5s ease-in-out;
+
+} 
+	/*Imagen on hover*/
+	#imagenFondo:hover{
+		overflow: hidden;
+		-webkit-transform: scale(1.05);
+		-webkit-filter: blur(0px);
+
+	}
+
+/*Capa del logo*/
+#imagenTexto-Capa{
+	position:absolute;
+    left:0;
+    top:0;
+	z-index:2;
+
+	overflow: hidden;
+	width: 100%;
+
+    user-select: none;
+    pointer-events: none;
+}
+
+/*Texto Intro1*/
+#txt1{
+	text-align: left;
+	font-size: 114px;
+
+	color: white;
+	text-shadow: 0px 0px 10px #e28473;
+
+	margin-left: 200px;
+	margin-top: 50px;
+	margin-bottom: 130px;
+	font-family: AriaL;
+
+	visibility: hidden;
+}
+
+/*Texto Intro2*/
+#txt2{
+	text-align: center;
+	font-size: 150px;
+	color: white;
+	text-shadow: 0px 0px 20px #e28473;
+	margin: 0;
+	font-family: fontNav;
+}
+
+/***************/
+/** SEPARADOR **/
+/***************/
+
+.separador{
+	background-color: black;
+	width: 100%;
+	height: 50px;
+	-webkit-filter: blur(2px);
+}
+
+/*********************/
+/** SEPARADOR IMAGEN**/
+/*********************/
+#separadorImagen{
+	overflow: hidden;   
+    width: 100%;
+    height: 50px;
+}
+
+#imagenSeparador{
+	-webkit-filter: blur(3px);
+	position: relative;
+	top: -780px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+h2{
+	font-size: 90px;
+	color: white;
+	text-shadow: 2px 2px 2px #000000;
+	font-family: fontNav;
+
+}
+
+.fa {
+	padding: 20px;
+	
+	text-align: center;
+	text-decoration: none;
+	margin: 5px 2px;
+	border-radius: 50%;
+
+	width: 15%;
+  
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+.fa-facebook:hover {
+  background: white;
+  color: #3B5998;
+}
+
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+.fa-twitter:hover {
+  background: white;
+  color: #55ACEE;
+}
+
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+}
+.fa-linkedin:hover {
+  background: white;
+  color: #007bb5;
+}
+
+.fa-instagram {
+  background: #125688;
+  color: white;
+}
+.fa-instagram:hover {
+  background: white;
+  color: #125688;
+}
+
+.fa-vimeo {
+  background: #45bbff;
+  color: white;
+}
+.fa-vimeo:hover {
+  background: white;
+  color: #45bbff; 
+}
+
+a.fa{
+	font-size: 50px;
+	opacity: 1;
+
+	transition: all .3s ease-in-out;
+}
+
+a.fa:hover{
+	opacity: 1;
+}
+
+
+.contenedorDatos{
+	width: 100%;
+	height: 500px;
+
+	display: flex;
+	flex-wrap: wrap;
+	align-content: flex-start;
+	justify-content: space-around;
+
+}
+.contenedorDatos.left{
+	flex-direction: row;
+	background-color: #111111;
+}
+
+.contenedorDatos.right{
+	text-align: right;
+	flex-direction: row-reverse;
+	background-color: #222222;
+}
+
+.contenedorTexto{
+	width: 60%;
+}
+
+.contenedorCarnet{
+	width: 20%;
+}
+
+.contenedorSocial{
+	width: 20%;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	align-items: center;
+}
+
+.contenedorInfo{
+	width: 50%;
+	position: relative;
+	left: 25%;
+}
+
+h3{
+	color: white;
+	font-size: 42px;
+	opacity: .8;
+
+}
+
+.fotoCarnet{
+	width: 100%;
+
+}
+
+
+
+
+
+
+
+
+
+p{
+	
+	color: white;
+	font-size: 24px;
+
+}
+
+
+/*Horizon at war es un estudio que empieza a funcionar en 2018 con el objetivo de ofrecer un sitio común donde distintos freelancers puedan
+						formar equipos o ser contratados de forma independiente.
+
+						La idea del proyecto surge de las necesidades de los propios fundadores, que tras finalizar sus estudios necesitaban un punto de reunión donde ofrecer
+						sus servicios y publicar sus trabajos.
+
+						Nuestra principal preocupación es ofrecerte el experto en la materia que necesitas, con el estilo que más se adapte a tus exigencias.
+						¿Necesitas alguien que modele tus sueños? ¿Alguien que los anime? ¿O solamente alguien que los diseñe por tí? ¡Contáctanos!
+
+						-------------
+
+						Pero basta de promociones, ¡echa un vistazo a nuestros proyectos y freelancers!
+
+*/
